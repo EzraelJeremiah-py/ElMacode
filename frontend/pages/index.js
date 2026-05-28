@@ -15,22 +15,23 @@ export default function Home() {
 
   return (
     <div className="min-vh-100 bg-light text-dark d-flex flex-column">
-      {/* Hero */}
-      <header
-        className="py-5 shadow-lg text-center"
-        style={{
-          backgroundColor: "#1e3d59", // deep analytic blue
-          borderRadius: "20px",
-          margin: "20px auto",
-          boxShadow: "0 8px 20px rgba(0,0,0,0.6)",
-          color: "white", // gold text
-          maxWidth: "900px"
-        }}
-      >
-        <h1 className="fw-bold mb-2">{portfolio.name}</h1>
-        <h3 className="fw-light mb-3">{portfolio.title}</h3>
-        <p className="mt-3">{portfolio.profile}</p>
-      </header>
+  {/* Hero */}
+    <header
+    className="py-5 shadow-lg text-center"
+      style={{
+        backgroundColor: "#1e3d59",   // deep analytic blue
+        borderRadius: "0px",          // rectangular, no rounded corners
+        margin: "0",                  // remove auto margins
+        boxShadow: "0 8px 20px rgba(0,0,0,0.6)",
+        color: "white",               // pure white text
+        width: "100%"                 // spread full screen
+          }}
+>
+  <h1 className="fw-bold mb-2">{portfolio.name}</h1>
+  <h3 className="fw-light mb-3">{portfolio.title}</h3>
+  <p className="mt-3">{portfolio.profile}</p>
+  </header>
+
 
       <main className="container py-5 flex-grow-1">
         {/* Skills in a single floating card */}
