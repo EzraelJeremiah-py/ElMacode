@@ -1,4 +1,3 @@
-
 // pages/index.js
 import { useEffect, useState } from "react";
 
@@ -15,16 +14,16 @@ export default function Home() {
   if (!portfolio) return <p className="text-center mt-5">Loading...</p>;
 
   return (
-    <div className="min-vh-100 bg-dark text-white d-flex flex-column">
+    <div className="min-vh-100 bg-light text-dark d-flex flex-column">
       {/* Hero */}
       <header
         className="py-5 shadow-lg text-center"
         style={{
-          backgroundColor: "black",
+          backgroundColor: "#1e3d59", // deep blue for analytics vibe
           borderRadius: "20px",
           margin: "20px auto",
           boxShadow: "0 8px 20px rgba(0,0,0,0.6)",
-          color: "gold",
+          color: "#f5c518", // gold accent
           maxWidth: "900px"
         }}
       >
@@ -34,20 +33,20 @@ export default function Home() {
       </header>
 
       <main className="container py-5 flex-grow-1">
-        {/* Skills as pill cards */}
+        {/* Skills as analytic pill cards */}
         <section className="mb-5 text-center">
-          <h2 className="text-info mb-3">Skills</h2>
+          <h2 className="text-primary mb-3">Skills</h2>
           <div className="row justify-content-center">
             {portfolio.skills.map((s, i) => (
               <div key={i} className="col-md-4 mb-3">
                 <div
                   className="shadow-sm d-flex justify-content-center align-items-center"
                   style={{
-                    backgroundColor: "cyan",
-                    color: "black",
-                    borderRadius: "50px",
-                    padding: "15px 25px",
-                    fontWeight: "500",
+                    backgroundColor: "#f5c518", // gold pills
+                    color: "#1e3d59",
+                    borderRadius: "30px",
+                    padding: "12px 20px",
+                    fontWeight: "600",
                     boxShadow: "0 6px 12px rgba(0,0,0,0.3)"
                   }}
                 >
@@ -60,17 +59,17 @@ export default function Home() {
 
         {/* Qualifications */}
         <section className="mb-5 text-center">
-          <h2 className="text-warning mb-3">Qualifications</h2>
+          <h2 className="text-secondary mb-3">Qualifications</h2>
           <ul className="list-group">
             {portfolio.qualifications.map((q, i) => (
-              <li key={i} className="list-group-item bg-dark text-white border-light">
+              <li key={i} className="list-group-item bg-light text-dark border-dark">
                 {q}
               </li>
             ))}
           </ul>
         </section>
 
-        {/* Projects as floating advanced cards */}
+        {/* Projects as analytic cards */}
         <section className="mb-5 text-center">
           <h2 className="text-success mb-3">Projects</h2>
           <div className="row justify-content-center">
@@ -79,14 +78,14 @@ export default function Home() {
                 <div
                   className="shadow-lg p-4 h-100 text-center"
                   style={{
-                    background: "linear-gradient(135deg, #0d6efd, #20c997)",
+                    background: "linear-gradient(135deg, #1e3d59, #3a6ea5)", // analytic blue gradient
                     color: "white",
-                    borderRadius: "20px",
-                    padding: "30px",
+                    borderRadius: "15px",
+                    padding: "25px",
                     boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
                     transition: "transform 0.3s ease"
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-10px)")}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-8px)")}
                   onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
                 >
                   <h5 className="fw-bold mb-3">{p.title}</h5>
@@ -108,11 +107,11 @@ export default function Home() {
 
       {/* Footer */}
       <footer
-        className="text-center py-3 bg-secondary text-white"
+        className="text-center py-3 bg-dark text-light"
         style={{ position: "fixed", bottom: 0, width: "100%" }}
       >
         <small>
-          &copy; {new Date().getFullYear()} {portfolio.name} | Professional Portfolio
+          &copy; {new Date().getFullYear()} {portfolio.name} | Data Analytics Portfolio
         </small>
       </footer>
     </div>
