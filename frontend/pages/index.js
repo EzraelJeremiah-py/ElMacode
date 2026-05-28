@@ -23,7 +23,7 @@ export default function Home() {
           borderRadius: "20px",
           margin: "20px auto",
           boxShadow: "0 8px 20px rgba(0,0,0,0.6)",
-          color: "#f5c518", // gold text
+          color: "white", // gold text
           maxWidth: "900px"
         }}
       >
