@@ -19,11 +19,11 @@ export default function Home() {
       <header
         className="py-5 shadow-lg text-center"
         style={{
-          backgroundColor: "#1e3d59", // deep blue for analytics vibe
+          backgroundColor: "#1e3d59", // deep analytic blue
           borderRadius: "20px",
           margin: "20px auto",
           boxShadow: "0 8px 20px rgba(0,0,0,0.6)",
-          color: "#f5c518", // gold accent
+          color: "#f5c518", // gold text
           maxWidth: "900px"
         }}
       >
@@ -33,27 +33,41 @@ export default function Home() {
       </header>
 
       <main className="container py-5 flex-grow-1">
-        {/* Skills as analytic pill cards */}
+        {/* Skills in a single floating card */}
         <section className="mb-5 text-center">
           <h2 className="text-primary mb-3">Skills</h2>
-          <div className="row justify-content-center">
-            {portfolio.skills.map((s, i) => (
-              <div key={i} className="col-md-4 mb-3">
-                <div
-                  className="shadow-sm d-flex justify-content-center align-items-center"
-                  style={{
-                    backgroundColor: "#f5c518", // gold pills
-                    color: "#1e3d59",
-                    borderRadius: "30px",
-                    padding: "12px 20px",
-                    fontWeight: "600",
-                    boxShadow: "0 6px 12px rgba(0,0,0,0.3)"
-                  }}
-                >
-                  {s}
+          <div
+            className="shadow-lg p-4 mx-auto"
+            style={{
+              background: "linear-gradient(135deg, #f5c518, #ffc107)", // gold gradient
+              color: "black",
+              borderRadius: "20px",
+              maxWidth: "900px",
+              boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
+              transition: "transform 0.3s ease"
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-10px)")}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+          >
+            <div className="row justify-content-center">
+              {portfolio.skills.map((s, i) => (
+                <div key={i} className="col-md-4 mb-3">
+                  <div
+                    className="d-flex justify-content-center align-items-center"
+                    style={{
+                      backgroundColor: "white",
+                      color: "black",
+                      borderRadius: "50px",
+                      padding: "10px 20px",
+                      fontWeight: "500",
+                      boxShadow: "0 4px 10px rgba(0,0,0,0.2)"
+                    }}
+                  >
+                    {s}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
@@ -69,7 +83,7 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* Projects as analytic cards */}
+        {/* Projects as floating advanced cards */}
         <section className="mb-5 text-center">
           <h2 className="text-success mb-3">Projects</h2>
           <div className="row justify-content-center">
